@@ -1,0 +1,97 @@
+body {
+    background-color: #27CCA7;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+}
+
+.empty {
+    color: transparent;
+}
+
+.activity-btn {
+    width: 25px;
+    height: 25px;
+
+}
+
+ul.activity-list {
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.activity-list li {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-bottom: solid 1px #9d9d9d;
+}
+
+ul.activity-list li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul.activity-list li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#score {
+    position: absolute;
+    top: 29px;
+    right: 30px;
+    font-size: 32px;
+    width: 40px;
+    text-align: center;
+}
+
+.spinEffect {
+    /*-webkit-animation: spin 1s 1 ease-in-out;*/
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+/*
+    Kopierat
+*/
+
+#burst-8 {
+    background: yellow;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+}
+
+#burst-8:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: yellow;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}

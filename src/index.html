@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head lang="sv">
+        <meta charset="UTF-8">
+        <title>Stavros</title>
+        <script src="../lib/angular.js"></script>
+        <!--<script src="../lib/bootstrap/js/bootstrap.js"></script>-->
+        <!--TODO: reset css-->
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="stavrosApp.js"></script>
+        <script src="StavrosCtrl.js"></script>
+        <script src="spinOnChangeDirective.js"></script>
+    </head>
+    <body ng-app="stavrosApp">
+
+        <div ng-controller="StavrosCtrl">
+            <div class="clearfix">
+                <div spin-on-change="activities" class="spin-container">
+                    <div id="burst-8" class="pull-right">
+                    </div>
+                </div>
+                <div id="score">
+                    {{getScore()}}
+                </div>
+            </div>
+            <ul class="activity-list">
+                <li ng-repeat="activity in activities">
+                    <div class="clearfix">
+                        {{activity.name}} ({{activity.points}})
+                        <button class="btn btn-default btn-xs activity-btn pull-right"
+                                ng-click="activity.selected = !activity.selected"
+                                ng-class="{empty: !activity.selected}">
+                            <i ng-if="activity.selected"
+                               class="glyphicon glyphicon-check"></i>
+                            <span ng-if="!activity.selected">&nbsp;</span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
