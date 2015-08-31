@@ -1,14 +1,9 @@
 body {
-    background-color: #27CCA7;
+    /*background-color: rgb(67, 92, 255);*/
+    background-image: url("../img/blue-pattern.jpg");
+    background-repeat: repeat;
     font-family: 'Open Sans', sans-serif;
-    margin: 10px;
-}
-
-.section {
-    padding: 20px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 3px;
+    /*margin: 10px;*/
 }
 
 .empty {
@@ -16,62 +11,111 @@ body {
 }
 
 .activity-btn {
-    width: 25px;
-    height: 25px;
-
+    width: 30px;
+    height: 30px;
+    margin-top: 4px;
+    font-size: 16px;
+    margin-left: 10px;
 }
 
 ul.activity-list {
     width: 100%;
     padding: 0;
     list-style-type: none;
+    /*margin-top: 30px;*/
 }
 
 ul.activity-list li {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 10px;
     border-bottom: solid 1px #9d9d9d;
-}
-
-ul.activity-list li:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    font-size: 16px;
 }
 
 ul.activity-list li:last-child {
     border-bottom: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+}
+
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #score {
-    position: absolute;
+    position: fixed;
     top: 29px;
     right: 30px;
     font-size: 32px;
     width: 40px;
     text-align: center;
+    z-index: 2;
+}
+
+.spin-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
 }
 
 .spinEffect {
     /*-webkit-animation: spin 1s 1 ease-in-out;*/
     animation-name: spin;
-    animation-duration: 1s;
+    animation-duration: 0.6s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
 }
 
-@-webkit-keyframes spin {
-    0%  {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(360deg);}
+#search-input {
+    font-size: 16px;
+    height: 40px;
 }
 
-/*
-    Kopierat
-*/
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.activity-thumbnail {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 5px;
+}
+
+.level-panel {
+    padding: 10px;
+}
+
+.level-panel .level-label {
+    font-size: 10px;
+    color: #e0e0e0;
+}
+
+.level-panel .level-current {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    font-family: cursive;
+}
+
+.bg-label {
+    background-color: #0792bc;
+    padding: 5px;
+}
 
 #burst-8 {
-    background: yellow;
+    background: #F1F138;
     width: 80px;
     height: 80px;
     position: relative;
@@ -80,6 +124,7 @@ ul.activity-list li:last-child {
     -moz-transform: rotate(20deg);
     -ms-transform: rotate(20deg);
     -o-transform: rotate(20deg);
+    transform: rotate(20deg);
 }
 
 #burst-8:before {
@@ -89,9 +134,35 @@ ul.activity-list li:last-child {
     left: 0;
     height: 80px;
     width: 80px;
-    background: yellow;
+    background: #F1F138;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.animate-enter,
+.animate-leave {
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+}
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    opacity: 1;
+    top: 0;
+    height: 30px;
+}
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    top: -50px;
+    height: 0px;
 }

@@ -1,1 +1,1 @@
-angular.module('stavrosApp', []);
+angular.module('stavrosApp', ['ngAnimate']);

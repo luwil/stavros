@@ -8,7 +8,7 @@ angular.module('stavrosApp').directive('spinOnChange', function ($timeout, $pars
         console.log('Spin change!', model);
         element.removeClass("spinEffect");
         $timeout(function () {
-          element.addClass("spinEffect")
+          element.addClass("spinEffect");
         });
       }, true);
     }

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Stavros</title>
         <script src="../lib/angular.js"></script>
+        <script src="../lib/angular-animate.js"></script>
         <!--<script src="../lib/bootstrap/js/bootstrap.js"></script>-->
         <!--TODO: reset css-->
         <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
@@ -14,8 +15,14 @@
         <script src="spinOnChangeDirective.js"></script>
     </head>
     <body ng-app="stavrosApp">
-
         <div ng-controller="StavrosCtrl">
+            <div class="level-panel">
+                <span class="level-label bg-label">LEVEL {{getLevel().number}}</span>
+                <span class="level-current bg-label">
+                    {{getLevel().name}}
+                </span>
+            </div>
+
             <div class="clearfix">
                 <div spin-on-change="activities" class="spin-container">
                     <div id="burst-8" class="pull-right">
@@ -25,15 +32,18 @@
                     {{getScore()}}
                 </div>
             </div>
+            <input type="text" ng-model="search" class="form-control" placeholder="Filtrera" id="search-input">
             <ul class="activity-list">
-                <li ng-repeat="activity in activities">
+                <li ng-animate="'animate'" ng-repeat="activity in activities | filter:search">
                     <div class="clearfix">
-                        {{activity.name}} ({{activity.points}})
+                        <!--<div class="img-thumbnail"></div>-->
+                        <img src="{{activity.imagePath}}" class="activity-thumbnail">
+                        {{activity.name}} <span class="badge">{{activity.points}}</span>
                         <button class="btn btn-default btn-xs activity-btn pull-right"
-                                ng-click="activity.selected = !activity.selected"
+                                ng-click="toggleSelected(activity)"
                                 ng-class="{empty: !activity.selected}">
                             <i ng-if="activity.selected"
-                               class="glyphicon glyphicon-check"></i>
+                               class="glyphicon glyphicon-ok"></i>
                             <span ng-if="!activity.selected">&nbsp;</span>
                         </button>
                     </div>

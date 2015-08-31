@@ -6,20 +6,6 @@ angular.module('stavrosApp')
     //*** Initiera variabler, lokala och på $scope ***//
     var LS_KEY_ACTIVITIES = 'STAVROS_ACTIVITY_LIST';
     $scope.activities = initActivities();
-    var levels = [
-      {
-        name: 'Level1',
-        limit: 0
-      },
-      {
-        name: 'Level2',
-        limit: 3
-      },
-      {
-        name: 'Level3',
-        limit: 6
-      }
-    ];
 
     //*** Metoder på $scope ***//
     $scope.getScore = function () {
@@ -35,49 +21,252 @@ angular.module('stavrosApp')
 
     $scope.getLevel = function () {
       var score = $scope.getScore();
-      var currentLevel = {};
-      levels.forEach(function (level) {
-        if (level.limit <= score && level.limit > currentLevel.limit) {
-          currentLevel = level;
+      if (score >= 25) {
+        return {
+          name: 'Stavros the greek lavva',
+          number: 8,
+          imagePath: '../img/stavros1'
         }
-      });
-      return currentLevel;
+      } else if (score >= 18) {
+        return {
+          name: 'Baywatch Beauty',
+          number: 7,
+          imagePath: '../img/stavros1'
+        }
+      } else if (score >= 15) {
+        return {
+          name: 'Ouzo Specialist',
+          number: 6,
+          imagePath: '../img/stavros1'
+        }
+      } else if (score >= 12) {
+        return {
+          name: 'Beachbum',
+          number: 5,
+          imagePath: '../img/stavros1'
+        }
+      } else if (score >= 9) {
+        return {
+          name: 'Bob the Backpacker',
+          number: 4,
+          imagePath: '../img/stavros1'
+        }
+      } else if (score >= 6) {
+        return {
+          name: 'Fan vad solen tar här',
+          number: 3,
+          imagePath: '../img/stavros1'
+        }
+      } else if (score >= 3) {
+        return {
+          name: 'SunTrip Champ',
+          number: 2,
+          imagePath: '../img/stavros1'
+        }
+      } else {
+        return {
+          name: 'Sven Banan',
+          number: 1,
+          imagePath: '../img/zorba2.jpg'
+        }
+      }
     };
 
-    $scope.saveActivities = function () {
-      console.log('Save to LS');
-      window.localStorage.put(LS_KEY_ACTIVITIES, $scope.activities);
+    $scope.toggleSelected = function (activity) {
+      activity.selected = !activity.selected;
+      localStorage.setItem(LS_KEY_ACTIVITIES, angular.toJson($scope.activities));
     };
 
     //*** Privata metoder för controllern ***//
     function initActivities() {
-      //var savedActivities = window.localStorage.get(LS_KEY_ACTIVITIES);
-      //if (savedActivities) {
-      //  console.log('Loaded saved activities from LocalStorage:', savedActivities);
-      //  return savedActivities;
-      //} else {
+      var savedActivities = angular.fromJson(localStorage.getItem(LS_KEY_ACTIVITIES));
+      if (savedActivities) {
+        console.log('Loaded saved activities from LocalStorage:', savedActivities);
+        return savedActivities;
+      } else {
         console.log('Create new list of activities.');
         return [
           {
-            name: 'Name1',
-            points: 1,
-            selected: false
-          },
-          {
-            name: 'Name2',
+            name: 'Ät vromiko (den smutsige)',
             points: 2,
-            selected: false
+            selected: false,
+            imagePath: '../img/vromiko2.jpg'
           },
           {
-            name: 'Name3',
+            name: 'Ät patsas',
+            points: 5,
+            selected: false,
+            imagePath: '../img/patsas-greek-soup.jpg'
+          },
+          {
+            name: 'Dansa zorba',
+            points: 5,
+            selected: false,
+            imagePath: '../img/zorba1.jpg'
+          },
+          {
+            name: 'Dansa zorba med genuina greker',
+            points: 8,
+            selected: false,
+            imagePath: '../img/zorba1.jpg'
+          },
+          {
+            name: 'Bada i speedos',
             points: 3,
-            selected: false
+            selected: false,
+            imagePath: '../img/Speedo1.jpg'
+          },
+          {
+            name: 'Ät feta',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Ät tzatsiki',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Drick ouzo',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Drick retsina',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Drick Metaxa 9*',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Drick Metaxa 1-3*',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Bomben i hotelpoolen',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Vaska en ouzu',
+            points: -1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Testa akustiken i en amfibieteater',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Gå över mållinjen på Athens marathon',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Ät gyros',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Spela strandtennis nära folk som solar',
+            points: 2,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Vara mer högljudd än en grek på restaurang',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Rök inomhus',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Ge grek matlagningskomplimang',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Gå på skilaviko-nattklubb',
+            points: 8,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Använd bravo 10 ggr i dagligt tal under en timme',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Skaffa/trimma till grekfrillan',
+            points: 10,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Spela volleyball',
+            points: 4,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Åk jetski',
+            points: 3,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Bränn dig i solen',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Hyr moped',
+            points: 4,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Få en grek att sjunga en grekisk visa',
+            points: 5,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Ät köttbullar på restaurang',
+            points: -5,
+            selected: false,
+            imagePath: '../img/unknown.png'
+          },
+          {
+            name: 'Hyr moped',
+            points: 1,
+            selected: false,
+            imagePath: '../img/unknown.png'
           }
         ]
       }
-    //}
+    }
   });
-
-angular.module('stavrosApp')
-  .directive();
-
