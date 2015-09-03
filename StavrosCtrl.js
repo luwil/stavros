@@ -77,7 +77,7 @@ angular.module('stavrosApp')
         return {
           name: 'Sven Banan',
           number: 1,
-          imagePath: 'img/svennebanan.jepg'
+          imagePath: 'img/svennebanan.jpeg'
         }
       }
     };
