@@ -5,6 +5,8 @@
 describe('Stavros test in the making',function(){
     it('det ska finnas en rubrik på sidan', function(){
         element(by.model('search')).sendKeys("drick")
-        browser.driver.sleep(2000)
+
+        expect(element(by.repeater('activity in activities').row(0)).element(by.class('clearfix'))getText()).toContain("drick")
+        browser.driver.slepp(1000)
     })
 })
