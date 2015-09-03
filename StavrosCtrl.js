@@ -65,7 +65,7 @@ angular.module('stavrosApp')
         return {
           name: 'Fan vad solen tar här',
           number: 3,
-          imagePath: 'img/fanvasolentar'
+          imagePath: 'img/fanvasolentar.jpg'
         }
       } else if (score >= 3) {
         return {
