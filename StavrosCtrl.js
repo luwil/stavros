@@ -18,12 +18,16 @@ angular.module('stavrosApp')
       return score;
     };
 
+    $scope.toggleSelected = function (activity) {
+      activity.selected = !activity.selected;
+      localStorage.setItem(LS_KEY_ACTIVITIES, angular.toJson($scope.activities));
+    };
+
     $scope.clearSelected = function () {
       $scope.activities.forEach(function (activity) {
         activity.selected = false;
       });
     };
-
 
     $scope.getLevel = function () {
       var score = $scope.getScore();
@@ -31,7 +35,7 @@ angular.module('stavrosApp')
         return {
           name: 'Stavros the greek lavva',
           number: 8,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/stavros1.jpg'
         }
       } else if (score >= 18) {
         return {
@@ -76,11 +80,6 @@ angular.module('stavrosApp')
           imagePath: 'img/zorba2.jpg'
         }
       }
-    };
-
-    $scope.toggleSelected = function (activity) {
-      activity.selected = !activity.selected;
-      localStorage.setItem(LS_KEY_ACTIVITIES, angular.toJson($scope.activities));
     };
 
     //*** Privata metoder för controllern ***//
