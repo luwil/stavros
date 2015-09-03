@@ -6,7 +6,7 @@ exports.config = {
     baseUrl: 'http://localhost:8080/',
     specs: ['*.spec.js'],
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'firefox'
     },
     //rootElement: 'div#StavrosCtrl',
 
