@@ -2,7 +2,7 @@
 
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['spec/basictest.js'],
+  specs: ['specs/basictest.js'],
   capabilities: {
     browserName: 'firefox'
   },
