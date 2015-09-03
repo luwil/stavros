@@ -54,15 +54,20 @@
                             <span ng-if="!activity.selected">&nbsp;</span>
                         </button>
                     </div>
-                    <img src="{{activity.imagePath}}" ng-if="activity.$_showPic">
+                    <img src="{{activity.imagePath}}" ng-if="activity.$_showPic" style="max-width: 100%">
                 </li>
                 <li class="animate-repeat" ng-if="results.length === 0">
                     <strong>Ingen aktivitet funnen :´(</strong>
                 </li>
             </ul>
-            <button ng-click="clearSelected()" class="btn btn-danger" style="margin: 20px 0 10px 10px;">Rensa alla
-                valda
+            <div class="img-box" ng-if="showMadeBy">
+                <div style="padding: 5px; color: #fff;">Mobbprogrammerat av Joel, Anders och Lukas. No rights reserved.</div>
+                <img src="img/mobb.jpeg">
+            </div>
+            <button ng-click="clearSelected()" class="btn btn-danger" style="margin: 20px 0 10px 10px;">
+                Rensa alla valda
             </button>
+            <a ng-click="showMadeBy = !showMadeBy" style="background-color: #CEDAD6;" class="pull-right">Skapad av...</a>
         </div>
     </body>
 </html>
