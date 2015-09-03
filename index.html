@@ -42,7 +42,9 @@
                 <li class="animate-repeat" ng-repeat="activity in activities | filter:search as results">
                     <div class="clearfix">
                         <!--<div class="img-thumbnail"></div>-->
-                        <img src="{{activity.imagePath}}" class="activity-thumbnail">
+                        <img src="{{activity.imagePath}}"
+                             class="activity-thumbnail"
+                             ng-click="activity.$_showPic = !activity.$_showPic">
                         {{activity.name}} <span class="badge">{{activity.points}}</span>
                         <button class="btn btn-default btn-xs activity-btn pull-right"
                                 ng-click="toggleSelected(activity)"
@@ -52,12 +54,15 @@
                             <span ng-if="!activity.selected">&nbsp;</span>
                         </button>
                     </div>
+                    <img src="{{activity.imagePath}}" ng-if="activity.$_showPic">
                 </li>
                 <li class="animate-repeat" ng-if="results.length === 0">
                     <strong>Ingen aktivitet funnen :´(</strong>
                 </li>
             </ul>
-            <button ng-click="clearSelected()" class="btn btn-danger" style="margin: 20px 0 10px 10px;">Rensa alla valda</button>
+            <button ng-click="clearSelected()" class="btn btn-danger" style="margin: 20px 0 10px 10px;">Rensa alla
+                valda
+            </button>
         </div>
     </body>
 </html>
