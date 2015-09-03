@@ -245,7 +245,7 @@ angular.module('stavrosApp')
             name: 'Hyr moped',
             points: 4,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/Rossa.png'
           },
           {
             name: 'Få en grek att sjunga en grekisk visa',
@@ -257,19 +257,13 @@ angular.module('stavrosApp')
             name: 'Ät köttbullar på restaurang',
             points: -5,
             selected: false,
-            imagePath: 'img/unknown.png'
-          },
-          {
-            name: 'Hyr moped',
-            points: 1,
-            selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/kottbullar.jpg'
           },
           {
             name: 'Bär accessoar i guld',
             points: 2,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/gold.png'
           },
           {
             name: 'Uppknäppt skjorta 2 knappar',

@@ -101,13 +101,13 @@ ul.activity-list li:last-child {
 
 .level-panel .level-current {
     display: block;
-    font-size: 20px;
+    font-size: 40px;
     color: #fff;
     font-family: cursive;
 }
 
 .bg-label {
-    background-color: #0792bc;
+    background-color: #F88C05;
     padding: 5px;
 }
 
