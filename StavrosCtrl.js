@@ -41,7 +41,7 @@ angular.module('stavrosApp')
         return {
           name: 'Baywatch Beauty',
           number: 7,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/baywatch.jpg'
         }
       } else if (score >= 15) {
         return {
