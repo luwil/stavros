@@ -3,8 +3,8 @@
  */
 exports.config = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
-    baseUrl: 'http://52.21.171.99/stavros/',
-    specs: ['sokning.spec.js'],
+    baseUrl: 'http://localhost:8080/',
+    specs: ['*.spec.js'],
     capabilities: {
         browserName: 'chrome'
     },
@@ -12,7 +12,7 @@ exports.config = {
 
     onPrepare: function() {
         browser.driver.manage().window().maximize();
-        return browser.get('http://52.21.171.99/stavros/'); // Added return statement here
+        return browser.get('http://localhost:8080'); // Added return statement here
     }
 
 }
