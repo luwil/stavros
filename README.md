@@ -19,3 +19,14 @@ Stavros
 
 4. Surfa in på http://localhost:8080
 
+## För att köra tester:
+
+1. Starta webdriver i en terminal
+ 
+    webdriver-manager start
+    
+2. Starta applikationen enligt ovan
+
+3. Kör testet
+
+    protractor protractor.conf.js
