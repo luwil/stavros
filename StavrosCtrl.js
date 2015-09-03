@@ -53,7 +53,7 @@ angular.module('stavrosApp')
         return {
           name: 'Beachbum',
           number: 5,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/beach-bum.jpg'
         }
       } else if (score >= 9) {
         return {
