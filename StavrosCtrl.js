@@ -155,7 +155,7 @@ angular.module('stavrosApp')
             name: 'Drick Metaxa 1-3*',
             points: 3,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/metaxa1.jpg'
           },
           {
             name: 'Bomben i hotelpoolen',
