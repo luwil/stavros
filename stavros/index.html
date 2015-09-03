@@ -3,12 +3,12 @@
     <head lang="sv">
         <meta charset="UTF-8">
         <title>Stavros</title>
-        <script src="../lib/angular.js"></script>
-        <script src="../lib/angular-animate.js"></script>
-        <!--<script src="../lib/bootstrap/js/bootstrap.js"></script>-->
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-animate.js"></script>
+        <!--<script src="lib/bootstrap/js/bootstrap.js"></script>-->
         <!--TODO: reset css-->
-        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css">
         <link rel="stylesheet" href="styles.css">
         <script src="stavrosApp.js"></script>
         <script src="StavrosCtrl.js"></script>
@@ -48,7 +48,7 @@
                         </button>
                     </div>
                 </li>
-                <li class="animate-repeat" ng-if="results.length == 0">
+                <li class="animate-repeat" ng-if="results.length === 0">
                     <strong>Ingen aktivitet funnen</strong>
                 </li>
             </ul>

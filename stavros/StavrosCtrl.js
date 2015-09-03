@@ -25,49 +25,49 @@ angular.module('stavrosApp')
         return {
           name: 'Stavros the greek lavva',
           number: 8,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 18) {
         return {
           name: 'Baywatch Beauty',
           number: 7,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 15) {
         return {
           name: 'Ouzo Specialist',
           number: 6,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 12) {
         return {
           name: 'Beachbum',
           number: 5,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 9) {
         return {
           name: 'Bob the Backpacker',
           number: 4,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 6) {
         return {
           name: 'Fan vad solen tar här',
           number: 3,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else if (score >= 3) {
         return {
           name: 'SunTrip Champ',
           number: 2,
-          imagePath: '../img/stavros1'
+          imagePath: 'img/stavros1'
         }
       } else {
         return {
           name: 'Sven Banan',
           number: 1,
-          imagePath: '../img/zorba2.jpg'
+          imagePath: 'img/zorba2.jpg'
         }
       }
     };
@@ -90,181 +90,199 @@ angular.module('stavrosApp')
             name: 'Ät vromiko (den smutsige)',
             points: 2,
             selected: false,
-            imagePath: '../img/vromiko2.jpg'
+            imagePath: 'img/vromiko2.jpg'
           },
           {
             name: 'Ät patsas',
             points: 5,
             selected: false,
-            imagePath: '../img/patsas-greek-soup.jpg'
+            imagePath: 'img/patsas-greek-soup.jpg'
           },
           {
             name: 'Dansa zorba',
             points: 5,
             selected: false,
-            imagePath: '../img/zorba1.jpg'
+            imagePath: 'img/zorba1.jpg'
           },
           {
             name: 'Dansa zorba med genuina greker',
             points: 8,
             selected: false,
-            imagePath: '../img/zorba1.jpg'
+            imagePath: 'img/zorba1.jpg'
           },
           {
             name: 'Bada i speedos',
             points: 3,
             selected: false,
-            imagePath: '../img/Speedo1.jpg'
+            imagePath: 'img/Speedo1.jpg'
           },
           {
             name: 'Ät feta',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Ät tzatsiki',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Drick ouzo',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Drick retsina',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Drick Metaxa 9*',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Drick Metaxa 1-3*',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Bomben i hotelpoolen',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Vaska en ouzu',
             points: -1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Testa akustiken i en amfibieteater',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Gå över mållinjen på Athens marathon',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Ät gyros',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Spela strandtennis nära folk som solar',
             points: 2,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Vara mer högljudd än en grek på restaurang',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Rök inomhus',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Ge grek matlagningskomplimang',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Gå på skilaviko-nattklubb',
             points: 8,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Använd bravo 10 ggr i dagligt tal under en timme',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Skaffa/trimma till grekfrillan',
             points: 10,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Spela volleyball',
             points: 4,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Åk jetski',
             points: 3,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Bränn dig i solen',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Hyr moped',
             points: 4,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Få en grek att sjunga en grekisk visa',
             points: 5,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Ät köttbullar på restaurang',
             points: -5,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
           },
           {
             name: 'Hyr moped',
             points: 1,
             selected: false,
-            imagePath: '../img/unknown.png'
+            imagePath: 'img/unknown.png'
+          },
+          {
+            name: 'Bär accessoar i guld',
+            points: 2,
+            selected: false,
+            imagePath: 'img/unknown.png'
+          },
+          {
+            name: 'Uppknäppt skjorta 2 knappar',
+            points: 2,
+            selected: false,
+            imagePath: 'img/unknown.png'
+          },
+          {
+            name: 'Uppknäppt skjorta 3 knappar',
+            points: 5,
+            selected: false,
+            imagePath: 'img/unknown.png'
           }
         ]
       }

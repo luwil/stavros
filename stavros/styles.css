@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/blue-pattern.jpg");
+    background-image: url("img/blue-pattern.jpg");
     background-repeat: repeat;
     font-family: 'Open Sans', sans-serif;
 }
@@ -11,7 +11,7 @@ body {
 .activity-btn {
     width: 30px;
     height: 30px;
-    margin-top: 4px;
+    margin-top: 9px;
     font-size: 16px;
     margin-left: 10px;
 }
@@ -24,7 +24,7 @@ ul.activity-list {
 
 ul.activity-list li {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: 10px;
+    padding: 5px 10px;
     border-bottom: solid 1px #9d9d9d;
     font-size: 16px;
 }
@@ -82,8 +82,8 @@ ul.activity-list li:last-child {
 }
 
 .activity-thumbnail {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: inline-block;
     border-radius: 50%;
     border: 2px solid #fff;
