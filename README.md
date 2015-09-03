@@ -1,7 +1,5 @@
-Stavros
-========
-
-### Gå från Svensson till Stavros!
+Stavros, Gå från Svensson till Stavros!
+=======================================
 
 ## Sätta upp miljön för att köra minimal server
 
@@ -18,15 +16,19 @@ Stavros
   om port 8080 är upptagen, ändra konfiguration i server.js
 
 4. Surfa in på http://localhost:8080
-
-## För att köra tester:
-
-1. Starta webdriver i en terminal
- 
-    webdriver-manager start
     
-2. Starta applikationen enligt ovan
+## Kör tester
 
-3. Kör testet
+1. Installera Protractor
 
-    protractor protractor.conf.js
+    `$ npm install -g protractor`
+
+2. Starta webdriver i en terminal
+ 
+    `webdriver-manager start`
+    
+3. Starta applikationen enligt ovan
+
+4. Kör testet
+
+    `protractor protractor.conf.js`
