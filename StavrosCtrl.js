@@ -12,7 +12,7 @@ angular.module('stavrosApp')
       var score = 0;
       $scope.activities.forEach(function (activity) {
         if (activity.selected) {
-          score += activity.points;
+          score += activity.points;//lägg till fel när poängen är 1
         }
       });
       return score;
