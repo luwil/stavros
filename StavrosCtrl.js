@@ -143,7 +143,7 @@ angular.module('stavrosApp')
             name: 'Drick retsina',
             points: 1,
             selected: false,
-            imagePath: 'img/retsina.png'
+            imagePath: 'img/retsina.jpg'
           },
           {
             name: 'Drick Metaxa 9*',
@@ -239,7 +239,7 @@ angular.module('stavrosApp')
             name: 'Bränn dig i solen',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/sunburn.png'
           },
           {
             name: 'Hyr moped',
