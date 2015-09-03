@@ -125,7 +125,7 @@ angular.module('stavrosApp')
             name: 'Ät feta',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/feta.jpg'
           },
           {
             name: 'Ät tzatsiki',
@@ -143,7 +143,7 @@ angular.module('stavrosApp')
             name: 'Drick retsina',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/retsina.png'
           },
           {
             name: 'Drick Metaxa 9*',
@@ -167,7 +167,7 @@ angular.module('stavrosApp')
             name: 'Vaska en ouzu',
             points: -1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/vaskaouzo.jpg'
           },
           {
             name: 'Testa akustiken i en amfibieteater',
