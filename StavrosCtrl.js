@@ -47,7 +47,7 @@ angular.module('stavrosApp')
         return {
           name: 'Ouzo Specialist',
           number: 6,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/zorba2.jpg'
         }
       } else if (score >= 12) {
         return {
@@ -59,7 +59,7 @@ angular.module('stavrosApp')
         return {
           name: 'Bob the Backpacker',
           number: 4,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/backpacker.jpg'
         }
       } else if (score >= 6) {
         return {

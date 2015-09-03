@@ -5,7 +5,6 @@ angular.module('stavrosApp').directive('spinOnChange', function ($timeout, $pars
     link: function (scope, element, attrs) {
       var model = $parse(attrs.spinOnChange);
       scope.$watch(model, function () {
-        console.log('Spin change!', model);
         element.removeClass("spinEffect");
         $timeout(function () {
           element.addClass("spinEffect");
