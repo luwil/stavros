@@ -114,6 +114,7 @@ ul.activity-list li:last-child {
 .img-box {
     background-color: #000;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .img-box img {
