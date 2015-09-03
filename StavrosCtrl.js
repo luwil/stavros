@@ -71,13 +71,13 @@ angular.module('stavrosApp')
         return {
           name: 'SunTrip Champ',
           number: 2,
-          imagePath: 'img/stavros1'
+          imagePath: 'img/champ.jpg'
         }
       } else {
         return {
           name: 'Sven Banan',
           number: 1,
-          imagePath: 'img/zorba2.jpg'
+          imagePath: 'img/svennebanan.jepg'
         }
       }
     };
