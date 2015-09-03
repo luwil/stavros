@@ -111,6 +111,18 @@ ul.activity-list li:last-child {
     padding: 5px;
 }
 
+.img-box {
+    background-color: #000;
+    padding: 10px;
+}
+
+.img-box img {
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 #burst-8 {
     background: #F1F138;
     width: 80px;
