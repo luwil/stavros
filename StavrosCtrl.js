@@ -131,13 +131,13 @@ angular.module('stavrosApp')
             name: 'Ät tzatsiki',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/tzatsiki.jpg'
           },
           {
             name: 'Drick ouzo',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/ouzodrink.jpg'
           },
           {
             name: 'Drick retsina',
@@ -161,7 +161,7 @@ angular.module('stavrosApp')
             name: 'Bomben i hotelpoolen',
             points: 3,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/bomben.jpg'
           },
           {
             name: 'Vaska en ouzu',
@@ -179,7 +179,7 @@ angular.module('stavrosApp')
             name: 'Gå över mållinjen på Athens marathon',
             points: 3,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/goal.jpg'
           },
           {
             name: 'Ät gyros',
@@ -191,7 +191,7 @@ angular.module('stavrosApp')
             name: 'Spela strandtennis nära folk som solar',
             points: 2,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/Beach-Tennis.jpg'
           },
           {
             name: 'Rök inomhus',
@@ -203,7 +203,7 @@ angular.module('stavrosApp')
             name: 'Ge grek matlagningskomplimang',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/matkomplimang.jpg'
           },
           {
             name: 'Gå på skilaviko-nattklubb',
@@ -215,13 +215,13 @@ angular.module('stavrosApp')
             name: 'Använd bravo 10 ggr i dagligt tal under en timme',
             points: 3,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/bravo.jpg'
           },
           {
             name: 'Skaffa/trimma till grekfrillan',
             points: 10,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/frilla.jpg'
           },
           {
             name: 'Spela volleyball',
