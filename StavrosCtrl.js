@@ -18,6 +18,12 @@ angular.module('stavrosApp')
       return score;
     };
 
+    $scope.clearSelected = function () {
+      $scope.activities.forEach(function (activity) {
+        activity.selected = false;
+      });
+    };
+
 
     $scope.getLevel = function () {
       var score = $scope.getScore();
