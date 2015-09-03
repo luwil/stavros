@@ -194,12 +194,6 @@ angular.module('stavrosApp')
             imagePath: 'img/unknown.png'
           },
           {
-            name: 'Vara mer högljudd än en grek på restaurang',
-            points: 3,
-            selected: false,
-            imagePath: 'img/unknown.png'
-          },
-          {
             name: 'Rök inomhus',
             points: 1,
             selected: false,
