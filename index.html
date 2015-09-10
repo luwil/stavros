@@ -47,6 +47,7 @@
                              ng-click="activity.$_showPic = !activity.$_showPic">
                         {{activity.name}} <span class="badge">{{activity.points}}</span>
                         <button class="btn btn-default btn-xs activity-btn pull-right"
+                                id="activity-toggle-{{$index}}"
                                 ng-click="toggleSelected(activity)"
                                 ng-class="{empty: !activity.selected}">
                             <i ng-if="activity.selected"
@@ -61,13 +62,24 @@
                 </li>
             </ul>
             <div class="img-box" ng-if="showMadeBy">
-                <div style="padding: 5px; color: #fff;">Mobbprogrammerat av Joel, Anders och Lukas. No rights reserved.</div>
+                <div style="padding: 5px; color: #fff;">Mobbprogrammerat av Joel, Anders och Lukas. No rights
+                    reserved.
+                </div>
                 <img src="img/mobb.jpeg">
             </div>
             <button ng-click="clearSelected()" class="btn btn-danger" style="margin: 20px 0 10px 10px;">
                 Rensa alla valda
             </button>
-            <a ng-click="showMadeBy = !showMadeBy" style="background-color: #CEDAD6;" class="pull-right">Skapad av...</a>
+            <div class="pull-right">
+                <ul class="list-unstyled">
+                    <li>
+                        <a id="about-link" href="/about.html"><span class="badge">Om appen</span></a>
+                    </li>
+                    <li>
+                        <a ng-click="showMadeBy = !showMadeBy" style="background-color: #CEDAD6;">Skapad av...</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
