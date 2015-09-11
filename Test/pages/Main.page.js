@@ -25,7 +25,15 @@ MainPage.prototype = Object.create({}, {
   },
   activityList: {
     get: function () {
-      return element.all(by.repeater('activity in activities'));
+      return element
+        .all(by.repeater('activity in activities'))
+        .map(function (elm, idx) {
+          elm.getText();
+          return new Activity(idx);
+        }).then(function(list){
+          console.log('list.length',list.length);
+          return list;
+        });
     }
   },
   filterInput: {
@@ -42,17 +50,11 @@ MainPage.prototype = Object.create({}, {
         })
     }
   },
-  activityAt: {
+  activityAtIdx: {
     value: function (idx) {
-      return this.activityList.get(idx).getText();
-    }
-  },
-  toggleActivityAt: {
-    value: function (idx) {
-      var self = this;
-      return this.activityList.get(idx).element($('.activity-btn').click())
-        .then(function () {
-          return self;
+      return this.activityList.get(idx)
+        .then(function (elm) {
+          return new Activity(elm, idx);
         });
     }
   },
@@ -64,6 +66,28 @@ MainPage.prototype = Object.create({}, {
         });
     }
   }
+});
+
+function Activity(idx) {
+  this.idx = idx;
+}
+
+Activity.prototype = Object.create({}, {
+  //label: {
+  //  get: function () {
+  //    return this.element.element($('#label-' + this.idx)).getText();
+  //  }
+  //},
+  //toggle: {
+  //  value: function () {
+  //    var self = this;
+  //    this.element.element($('#activity-btn' + this.idx))
+  //      .click()
+  //      .then(function () {
+  //        return self;
+  //      })
+  //  }
+  //}
 });
 
 module.exports = MainPage;

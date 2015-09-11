@@ -5,6 +5,11 @@ function AboutPage(baseUrl) {
 }
 
 AboutPage.prototype = Object.create({}, {
+  product: {
+    get: function () {
+      return webdriver.findElement(By.id('product')).getText();
+    }
+  },
   version: {
     get: function () {
       return webdriver.findElement(By.id('version')).getText();
