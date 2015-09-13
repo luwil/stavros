@@ -6,7 +6,7 @@ describe('Stavros test in the making', function () {
   it('det ska gå att söka', function () {
     element(by.model('search')).sendKeys("drick")
       .then(function () {
-        return browser.sleep(1000); // Wait for animation
+        return browser.sleep(2000); // Wait for animation
       })
       .then(function () {
         element(by.repeater('activity in activities').row(0))

@@ -18,7 +18,7 @@ var config = {
     isVerbose: true
   },
   onPrepare: function () {
-    browser.driver.manage().window().setSize(1, 1);
+    browser.driver.manage().window().setSize(500, 1000);
     return browser.get(config.baseUrl);
   }
 };
