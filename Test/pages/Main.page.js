@@ -23,16 +23,41 @@ MainPage.prototype = Object.create({}, {
       return browser.getTitle();
     }
   },
+  scrollToTop: {
+    value: function () {
+      var self = this;
+      return browser.executeScript('window.scrollTo(0,0);')
+        .then(function () {
+          return self;
+        });
+    }
+  },
   activityList: {
     get: function () {
       return element
         .all(by.repeater('activity in activities'))
         .map(function (elm, idx) {
-          elm.getText();
           return new Activity(idx);
-        }).then(function(list){
+        }).then(function (list) {
           return list;
         });
+    }
+  },
+  activityAtIdx: {
+    value: function (idx) {
+      return this.activityList
+        .then(function (list) {
+          return list[idx];
+        });
+    }
+  },
+  clearActivities: {
+    value: function () {
+      var self = this;
+      return $('#clear-button').click()
+        .then(function () {
+          return self;
+        })
     }
   },
   filterInput: {
@@ -49,19 +74,19 @@ MainPage.prototype = Object.create({}, {
         })
     }
   },
-  activityAtIdx: {
-    value: function (idx) {
-      return this.activityList.get(idx)
-        .then(function (elm) {
-          return new Activity(elm, idx);
-        });
-    }
-  },
   openAbout: {
     value: function () {
       return element(by.css("#about-link")).click()
         .then(function () {
           return new AboutPage().waitUntilVisible();
+        });
+    }
+  },
+  score: {
+    get: function () {
+      return element(by.binding('getScore()')).getText()
+        .then(function (text) {
+          return Number(text);
         });
     }
   }
@@ -71,22 +96,37 @@ function Activity(idx) {
   this.idx = idx;
 }
 
+function activityElementAtIndex(idx) {
+  return element(by.repeater('activity in activities').row(idx));
+}
+
 Activity.prototype = Object.create({}, {
-  //label: {
-  //  get: function () {
-  //    return this.element.element($('#label-' + this.idx)).getText();
-  //  }
-  //},
-  //toggle: {
-  //  value: function () {
-  //    var self = this;
-  //    this.element.element($('#activity-btn' + this.idx))
-  //      .click()
-  //      .then(function () {
-  //        return self;
-  //      })
-  //  }
-  //}
+  label: {
+    get: function () {
+      return activityElementAtIndex(this.idx)
+        .element(by.binding('activity.name')).getText();
+    }
+  },
+  points: {
+    get: function () {
+      return activityElementAtIndex(this.idx)
+        .element(by.binding('activity.points')).getText()
+        .then(function (text) {
+          return Number(text);
+        });
+    }
+  },
+  toggle: {
+    value: function () {
+      var self = this;
+      return activityElementAtIndex(this.idx)
+        .element(by.className('activity-btn'))
+        .click()
+        .then(function () {
+          return self;
+        })
+    }
+  }
 });
 
 module.exports = MainPage;

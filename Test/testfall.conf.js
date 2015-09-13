@@ -11,9 +11,11 @@ var config = {
 
   specs: ['*.spec.js'],
 
-  capabilities: {
+  multiCapabilities: [{
+    browserName: 'firefox'
+  }, {
     browserName: 'chrome'
-  },
+  }],
   jasmineNodeOpts: {
     isVerbose: true
   },
