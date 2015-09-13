@@ -31,7 +31,6 @@ MainPage.prototype = Object.create({}, {
           elm.getText();
           return new Activity(idx);
         }).then(function(list){
-          console.log('list.length',list.length);
           return list;
         });
     }
