@@ -211,7 +211,7 @@ angular.module('stavrosApp')
             name: 'Rök inomhus',
             points: 1,
             selected: false,
-            imagePath: 'img/unknown.png'
+            imagePath: 'img/raucheninomhus.jpg'
           },
           {
             name: 'Ge grek matlagningskomplimang',
