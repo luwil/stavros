@@ -18,6 +18,20 @@
     </head>
     <body ng-app="stavrosApp">
         <div ng-controller="StavrosCtrl">
+
+            <form ng-if="!isLoggedIn()" class="input-group login-panel">
+                <input type="text" class="form-control" ng-model="userName">
+                <span class="input-group-btn">
+                    <button type="submit" ng-click="login(userName)" class="btn btn-default">
+                        Logga in <i class="glyphicon glyphicon-sunglasses"></i>
+                    </button>
+                </span>
+            </form>
+
+            <a ng-click="logout()" ng-if="isLoggedIn()" id="logout-link">
+                Logga ut <i class="glyphicon glyphicon-thumbs-down"></i>
+            </a>
+
             <div class="level-panel">
                 <span class="level-label bg-label">LEVEL {{getLevel().number}}</span>
                 <span class="level-current bg-label">
@@ -74,7 +88,7 @@
             <div class="pull-right">
                 <ul class="list-unstyled">
                     <li>
-                        <a id="about-link" href="/about.html"><span class="badge">Om appen</span></a>
+                        <a id="about-link" href="about.html"><span class="badge">Om appen</span></a>
                     </li>
                     <li>
                         <a ng-click="showMadeBy = !showMadeBy" style="background-color: #CEDAD6;">Skapad av...</a>

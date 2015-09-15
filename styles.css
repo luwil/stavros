@@ -4,6 +4,20 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.login-panel {
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#logout-link {
+    padding: 5px 8px;
+    color: #F88C05;
+    margin: 10px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
 .empty {
     color: transparent;
 }

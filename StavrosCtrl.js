@@ -5,6 +5,7 @@ angular.module('stavrosApp')
 
     //*** Initiera variabler, lokala och på $scope ***//
     var LS_KEY_ACTIVITIES = 'STAVROS_ACTIVITY_LIST';
+    var loggedInUser = undefined;
     $scope.activities = initActivities();
 
     //*** Metoder på $scope ***//
@@ -20,54 +21,67 @@ angular.module('stavrosApp')
 
     $scope.toggleSelected = function (activity) {
       activity.selected = !activity.selected;
-      localStorage.setItem(LS_KEY_ACTIVITIES, angular.toJson($scope.activities));
+      updateLocalStorage();
     };
 
     $scope.clearSelected = function () {
       $scope.activities.forEach(function (activity) {
         activity.selected = false;
       });
+      updateLocalStorage();
+    };
+
+    $scope.login = function (userName) {
+      loggedInUser = userName;
+    };
+
+    $scope.logout = function () {
+      loggedInUser = undefined;
+    };
+
+    $scope.isLoggedIn = function () {
+      return loggedInUser !== undefined;
     };
 
     $scope.getLevel = function () {
       var score = $scope.getScore();
-      if (score >= 25) {
+      if (score >= 35) {
         return {
           name: 'Stavros the greek lavva',
           number: 8,
           imagePath: 'img/stavros1.jpg'
         }
-      } else if (score >= 18) {
+      } else if (score >= 30) {
         return {
           name: 'Baywatch Beauty',
           number: 7,
           imagePath: 'img/baywatch.jpg'
         }
-      } else if (score >= 15) {
+      } else if (score >= 25) {
         return {
           name: 'Ouzo Specialist',
           number: 6,
           imagePath: 'img/zorba2.jpg'
         }
-      } else if (score >= 12) {
+      } else if (score >= 20) {
         return {
           name: 'Beachbum',
           number: 5,
           imagePath: 'img/beach-bum.jpg'
         }
-      } else if (score >= 9) {
+      } else if (score >= 15) {
         return {
           name: 'Bob the Backpacker',
           number: 4,
           imagePath: 'img/backpacker.jpg'
         }
-      } else if (score >= 6) {
+      } else if (score >= 10) {
         return {
           name: 'Fan vad solen tar här',
           number: 3,
           imagePath: 'img/fanvasolentar.jpg'
         }
-      } else if (score >= 3) {
+      } else if (score >= 5) {
         return {
           name: 'SunTrip Champ',
           number: 2,
@@ -75,7 +89,7 @@ angular.module('stavrosApp')
         }
       } else {
         return {
-          name: 'Sven Banan',
+          name: loggedInUser ? loggedInUser + ' Banan' : 'Sven Banan',
           number: 1,
           imagePath: 'img/svennebanan.jpeg'
         }
@@ -279,5 +293,9 @@ angular.module('stavrosApp')
           }
         ]
       }
+    }
+
+    function updateLocalStorage() {
+      localStorage.setItem(LS_KEY_ACTIVITIES, angular.toJson($scope.activities));
     }
   });
