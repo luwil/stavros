@@ -10,9 +10,9 @@ body {
 }
 
 #logout-link {
-    padding: 5px 8px;
+    padding: 5px;
     color: #F88C05;
-    margin: 10px;
+    margin: 5px 10px;
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
