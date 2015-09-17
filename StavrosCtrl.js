@@ -78,13 +78,13 @@ angular.module('stavrosApp')
       } else if (score >= 10) {
         return {
           name: 'SunTrip Champ',
-          number: 2,
+          number: 3,
           imagePath: 'img/champ.jpg'
         }
       } else if (score >= 5) {
         return {
           name: 'Fan vad solen tar här',
-          number: 3,
+          number: 2,
           imagePath: 'img/fanvasolentar.jpg'
         }
       } else {
