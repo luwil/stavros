@@ -15,4 +15,4 @@ exports.config = {
         return browser.get('http://localhost:8080'); // Added return statement here
     }
 
-}
+};
