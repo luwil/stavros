@@ -6,7 +6,8 @@ exports.config = {
         browserName: 'firefox'
     },
     jasmineNodeOpts: {
-        isVerbose:true
+        isVerbose:true,
+        defaultTimeoutInterval: (2 * 60 * 1000)
     },
     onPrepare: function() {
         browser.driver.manage().window().getSize(500,500);
