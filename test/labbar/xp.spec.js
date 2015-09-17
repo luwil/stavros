@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavros', function () {
-  it('Äta vrokmiko ger 5 StavrosPoints', function () {
+  it('Äta vrokmiko ger 2 StavrosPoints', function () {
 
   });
 
@@ -34,7 +34,24 @@ describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavro
   //});
 
   it('Det ska gå att rensa alla aktiviteter och StavrosPoints för att det är kul att börja om', function () {
+    // Assert init
+    expect(element(by.id('score')).getText()).
+      toEqual('0');
 
+    // Setup
+    var activity1 = element(by.repeater('activity in activities').row(0));
+    activity1.element(by.className('activity-btn')).click();
+
+    // Assert setup
+    expect(element(by.id('score')).getText()).
+      toEqual('2');
+
+    // Do test
+    element(by.buttonText('Rensa alla valda')).click();
+
+    // Assert test
+    expect(element(by.id('score')).getText()).
+      toEqual('0');
   });
 
 });
