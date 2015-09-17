@@ -77,15 +77,15 @@ angular.module('stavrosApp')
         }
       } else if (score >= 10) {
         return {
-          name: 'Fan vad solen tar här',
-          number: 3,
-          imagePath: 'img/fanvasolentar.jpg'
-        }
-      } else if (score >= 5) {
-        return {
           name: 'SunTrip Champ',
           number: 2,
           imagePath: 'img/champ.jpg'
+        }
+      } else if (score >= 5) {
+        return {
+          name: 'Fan vad solen tar här',
+          number: 3,
+          imagePath: 'img/fanvasolentar.jpg'
         }
       } else {
         return {
@@ -172,7 +172,7 @@ angular.module('stavrosApp')
           name: 'Drick Metaxa 9*',
           points: 1,
           selected: false,
-          imagePath: 'img/unknown.png'
+          imagePath: 'img/metaxa9.jpg'
         },
         {
           name: 'Drick Metaxa 1-3*',
