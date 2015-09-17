@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * StavrosCtrl definierar var som ligger på $scope:et i det HTML element som har attributet ng-controller="StavrosCtrl"
+ */
 angular.module('stavrosApp')
   .controller('StavrosCtrl', function ($scope) {
 

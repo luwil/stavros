@@ -31,4 +31,4 @@ Stavros, Gå från Svensson till Stavros!
 
 4. Kör testet
 
-    `protractor Test/protractor.conf.js`
+    `protractor test/testfall.conf.js`
