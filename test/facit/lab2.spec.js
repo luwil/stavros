@@ -1,5 +1,13 @@
 'use strict';
 describe('Lab 2', function () {
+  /**
+   * Nollställer poängen mellan testerna
+   */
+  beforeEach(function () {
+    element(by.css('button[ng-click="clearSelected()"]')).click();
+    expect(element(by.binding('getScore()')).getText()).toBe('0');
+  });
+
   it('Aktiviteterna ska vara poängsatta, testa genom att bocka för alla aktiviteter och kontrollera att totalpoängen blir 86.', function () {
     element.all(by.repeater('activity in activities'))
       .each(function (rowElement) {
@@ -12,7 +20,7 @@ describe('Lab 2', function () {
     expect(element(by.id('logout-link')).isPresent()).toBe(false);
 
     element(by.model('userName')).sendKeys('Sune');
-    element(by.id('login-button')).click();
+    element(by.buttonText('Logga in')).click();
 
     expect(element(by.binding('getLevel().name')).getText()).toBe('Sune Banan');
     expect(element(by.id('logout-link')).isPresent()).toBe(true);
