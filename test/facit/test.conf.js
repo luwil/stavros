@@ -3,12 +3,7 @@ exports.config = {
     baseUrl: 'http://localhost:8080/',
     specs: [
       'lab1.spec.js',
-      'lab2.spec.js',
-      'inloggning.spec.js',
-      'level.spec.js',
-      'listan.spec.js',
-      'aktiviteter.spec.js',
-      'search.spec.js'
+      'lab2.spec.js'
     ],
     capabilities: {
         browserName: 'firefox'
