@@ -2,10 +2,10 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     baseUrl: 'http://localhost:8080/',
     specs: [
+      'aktiviteter.spec.js',
       'inloggning.spec.js',
       'level.spec.js',
       'listan.spec.js',
-      'aktiviteter.spec.js',
       'search.spec.js'
     ],
     capabilities: {
