@@ -10,7 +10,7 @@ describe('Användare ska kunna återkomma till appen', function () {
     expect(element(by.id('logout-link')).isPresent()).toBe(false);
 
     element(by.model('userName')).sendKeys('Guldrun');
-    element(by.css('button[ng-click="login(userName)"]')).click();
+    element(by.id('login-button')).click();
 
     expect(element(by.binding('getLevel().name')).getText()).toBe('Guldrun Banan');
     expect(element(by.id('logout-link')).isPresent()).toBe(true);
@@ -22,7 +22,7 @@ describe('Användare ska kunna återkomma till appen', function () {
     ' ("Sven Banan")', function () {
 
     element(by.model('userName')).sendKeys('Guldrun');
-    element(by.css('button[ng-click="login(userName)"]')).click();
+    element(by.id('login-button')).click();
 
 
     element(by.id('logout-link')).click();

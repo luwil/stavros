@@ -22,7 +22,7 @@
             <form ng-if="!isLoggedIn()" class="input-group login-panel">
                 <input type="text" class="form-control" ng-model="userName">
                 <span class="input-group-btn">
-                    <button type="submit" ng-click="login(userName)" class="btn btn-default">
+                    <button id="login-button" type="submit" ng-click="login(userName)" class="btn btn-default">
                         Logga in <i class="glyphicon glyphicon-sunglasses"></i>
                     </button>
                 </span>
