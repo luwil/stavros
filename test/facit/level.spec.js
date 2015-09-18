@@ -2,6 +2,9 @@
 
 describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavros', function () {
 
+  /**
+   * Nollställer poängen mellan testerna
+   */
   beforeEach(function () {
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');

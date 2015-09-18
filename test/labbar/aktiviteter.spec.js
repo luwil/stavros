@@ -2,6 +2,14 @@
 
 describe('Hantering av aktiviteter', function () {
 
+  /**
+   * Nollställer poängen mellan testerna
+   */
+  beforeEach(function () {
+    element(by.css('button[ng-click="clearSelected()"]')).click();
+    expect(element(by.binding('getScore()')).getText()).toBe('0');
+  });
+
   it('skall kunna bocka för aktiviteter och då skall totalpoängen öka, t.ex om man bockar i "Ät patsas" så skall' +
     ' poängen bli 5.', function () {
   });
