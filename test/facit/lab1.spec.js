@@ -1,5 +1,12 @@
 'use strict';
 describe('Lab 1', function () {
+  /**
+   * Nollställer poängen mellan testerna
+   */
+  beforeEach(function () {
+    element(by.css('button[ng-click="clearSelected()"]')).click();
+    expect(element(by.binding('getScore()')).getText()).toBe('0');
+  });
 
   it('Verifiera att aktuell nivå (texten LEVEL 1) visas på sidan', function () {
     expect(element(by.binding('getLevel().number')).getText()).toBe('LEVEL 1');

@@ -1,6 +1,13 @@
 'use strict'
 
 describe('Det ska finnas en lista med grekiska aktiviteter', function () {
+  /**
+   * Nollställer poängen mellan testerna
+   */
+  beforeEach(function () {
+    element(by.css('button[ng-click="clearSelected()"]')).click();
+    expect(element(by.binding('getScore()')).getText()).toBe('0');
+  });
 
   it('Det ska finnas minst 1 aktivitet i listan', function () {
     expect(element.all(by.repeater('activity in activities')).count()).toBeGreaterThan(0);
