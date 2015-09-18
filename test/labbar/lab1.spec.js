@@ -13,12 +13,11 @@ describe('Lab 1', function () {
 
   });
 
-  it('Skriv in text i användarnamns-input och kontrollera med browser.sleep()', function () {
+  it('Skriv in text i användarnamns-input och kontrollera okulärt i browsern med browser.sleep(3000)', function () {
 
   });
 
-  it('Klicka på knappen "Logga in" och kolla vad som händer (använd browser.sleep() före och efter och titta i' +
-    ' browsern)', function () {
+  it('Klicka på knappen "Logga in" och kolla vad som händer (använd browser.sleep(3000) före och efter och kontrollera okulärt i browsern)', function () {
 
   });
 

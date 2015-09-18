@@ -5,14 +5,13 @@ describe('Lab 1', function () {
     expect(element(by.binding('getLevel().number')).getText()).toBe('LEVEL 1');
   });
 
-  it('Skriv in text i användarnamns-input och kontrollera med browser.sleep()', function () {
+  it('Skriv in text i användarnamns-input och kontrollera okulärt med browser.sleep(3000)', function () {
     browser.sleep(3000);
     element(by.model('userName')).sendKeys('Sune');
     browser.sleep(3000);
   });
 
-  it('Klicka på knappen "Logga in" och kolla vad som händer (använd browser.sleep() före och efter och titta i' +
-    ' browsern)', function () {
+  it('Klicka på knappen "Logga in" och kolla vad som händer (använd browser.sleep() före och efter och titta i browsern)', function () {
     browser.sleep(3000);
     element(by.buttonText('Logga in')).click();
     browser.sleep(3000);
