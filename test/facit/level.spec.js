@@ -29,10 +29,6 @@ describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavro
   });
 
   it('Olika levels ska ha olika bilder', function () {
-    // TODO funkar ej??
-    //expect(element(by.binding('getLevel().imagePath')).getText()).toMatch(/[img\/]/);
-
-    // TODO funkar men bara för att det är första träffen
     expect(element(by.css('.img-box img')).getAttribute('src')).toMatch(/[img\/svenba.jp]/);
 
     // Få 10 poäng
