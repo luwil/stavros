@@ -25,8 +25,8 @@ describe('Hantering av aktiviteter', function () {
 
   it('Aktiviteterna ska vara poängsatta, t.ex totalpoängen skall bli 86 om alla är förbockade.', function () {
     element.all(by.repeater('activity in activities'))
-      .each(function (element) {
-        element.element(by.className('activity-btn')).click();
+      .each(function (rowElement) {
+        rowElement.element(by.className('activity-btn')).click();
       });
     expect(element(by.binding('getScore()')).getText()).toBe('86');
   });
