@@ -2,6 +2,11 @@
 
 describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavros', function () {
 
+  beforeEach(function () {
+    element(by.css('button[ng-click="clearSelected()"]')).click();
+    expect(element(by.binding('getScore()')).getText()).toBe('0');
+  });
+
   it('0 poäng ger level Sven Banan', function () {
     expect(element(by.binding('getScore()')).getText()).toBe('0');
     expect(element(by.binding('getLevel().name')).getText()).toBe('Sven Banan');
