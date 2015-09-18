@@ -56,7 +56,7 @@ Hitta element som innehåller angiven ng-repeater
 Expects
 =======
 ## expect(...).toBe(expected)
-Verifiera att ett värde är lika med 'expected'
+Verifiera att ett värde är samma objekt som 'expected'
 
 ## expect(...).toEqual(expected)
 Verifiera att ett värde är lika med 'expected'
