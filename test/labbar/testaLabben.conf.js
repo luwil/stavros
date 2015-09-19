@@ -3,9 +3,8 @@ exports.config = {
     baseUrl: 'http://localhost:8080/',
     specs: ['listan.spec.js'],
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'firefox'
     },
-    //rootElement: 'div#StavrosCtrl',
 
     onPrepare: function() {
         browser.driver.manage().window().maximize();
@@ -13,4 +12,3 @@ exports.config = {
     }
 
 };
-
