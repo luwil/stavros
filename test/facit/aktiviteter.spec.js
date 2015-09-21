@@ -1,8 +1,11 @@
 'use strict';
 
+var util = require('./util');
+
 describe('Hantering av aktiviteter', function () {
 
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');
   });
@@ -18,15 +21,21 @@ describe('Hantering av aktiviteter', function () {
       .then(function (filteredElements) {
         expect(filteredElements.length).toBe(1);
         var foundElement = filteredElements[0];
-        foundElement.element(by.className('activity-btn')).click();
-        expect(element(by.binding('getScore()')).getText()).toBe('5');
+        util.scrollToTop()
+          .then(function () {
+            foundElement.element(by.className('activity-btn')).click();
+            expect(element(by.binding('getScore()')).getText()).toBe('5');
+          });
       });
   });
 
   it('Aktiviteterna ska vara poängsatta, t.ex totalpoängen skall bli 86 om alla är förbockade.', function () {
     element.all(by.repeater('activity in activities'))
       .each(function (rowElement) {
-        rowElement.element(by.className('activity-btn')).click();
+        util.scrollToTop()
+          .then(function () {
+            rowElement.element(by.className('activity-btn')).click();
+          });
       });
     expect(element(by.binding('getScore()')).getText()).toBe('86');
   });
@@ -35,7 +44,10 @@ describe('Hantering av aktiviteter', function () {
     ' avbockas alla aktiviteter och totalpoängen blir 0.', function () {
     element.all(by.repeater('activity in activities'))
       .each(function (element) {
-        element.element(by.className('activity-btn')).click();
+        util.scrollToTop()
+          .then(function () {
+            element.element(by.className('activity-btn')).click();
+          });
       });
     element(by.css('button[ng-click="clearSelected()"]')).click();
     element.all(by.repeater('activity in activities'))

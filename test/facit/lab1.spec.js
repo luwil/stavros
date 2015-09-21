@@ -4,6 +4,7 @@ describe('Lab 1', function () {
    * Nollställer poängen mellan testerna
    */
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');
   });
@@ -20,6 +21,7 @@ describe('Lab 1', function () {
 
   it('Klicka på knappen "Logga in" och kolla vad som händer (använd browser.sleep() före och efter och titta i browsern)', function () {
     browser.sleep(3000);
+    element(by.model('userName')).sendKeys('Sune');
     element(by.buttonText('Logga in')).click();
     browser.sleep(3000);
 

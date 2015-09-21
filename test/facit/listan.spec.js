@@ -5,6 +5,7 @@ describe('Det ska finnas en lista med grekiska aktiviteter', function () {
    * Nollställer poängen mellan testerna
    */
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');
   });

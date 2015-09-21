@@ -23,12 +23,21 @@ Stavros, Gå från Svensson till Stavros!
 
     `$ npm install -g protractor`
 
-2. Starta webdriver i en terminal
+2. Starta webdriver i en terminal (NodeJSstart": "node server.js": If there is a server.js file in the root of your 
+package, then npm will default the start command to node server.js.)
  
-    `webdriver-manager start`
+    `webdriver-manager start`  
     
 3. Starta applikationen enligt ovan
 
-4. Kör testet
+4. Kör tester
 
-    `protractor test/testfall.conf.js`
+    - labbuppgifter:
+
+    `protractor test/labbar/testaLabben.conf.js`
+
+    - facit
+
+    `protractor test/facit/test.conf.js`
+
+    `protractor test/facit/extra.conf.js`

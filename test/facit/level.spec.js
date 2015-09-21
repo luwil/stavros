@@ -1,11 +1,14 @@
 'use strict';
 
+var util = require('./util');
+
 describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavros', function () {
 
   /**
    * Nollställer poängen mellan testerna
    */
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');
   });
@@ -25,9 +28,12 @@ describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavro
       .then(function (filteredElements) {
         expect(filteredElements.length).toBe(1);
         var foundElement = filteredElements[0];
-        foundElement.element(by.className('activity-btn')).click();
-        expect(element(by.binding('getScore()')).getText()).toBe('10');
-        expect(element(by.binding('getLevel().name')).getText()).toBe('SunTrip Champ');
+        util.scrollToTop()
+          .then(function () {
+            foundElement.element(by.className('activity-btn')).click();
+            expect(element(by.binding('getScore()')).getText()).toBe('10');
+            expect(element(by.binding('getLevel().name')).getText()).toBe('SunTrip Champ');
+          });
       });
   });
 
@@ -44,8 +50,11 @@ describe('Användaren ska kunna se sin progress mot att bli en fulländad Stavro
       .then(function (filteredElements) {
         expect(filteredElements.length).toBe(1);
         var foundElement = filteredElements[0];
-        foundElement.element(by.className('activity-btn')).click();
-        expect(element(by.binding('getScore()')).getText()).toBe('10');
+        util.scrollToTop()
+          .then(function () {
+            foundElement.element(by.className('activity-btn')).click();
+            expect(element(by.binding('getScore()')).getText()).toBe('10');
+          });
       });
 
     expect(element(by.css('.img-box img')).getAttribute('src')).toMatch(/[img\/chap.j]/);

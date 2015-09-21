@@ -2,6 +2,7 @@
 
 describe('Användare ska kunna återkomma till appen', function () {
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
   });
 

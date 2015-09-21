@@ -1,9 +1,13 @@
 'use strict';
+
+var util = require('./util');
+
 describe('Lab 2', function () {
   /**
    * Nollställer poängen mellan testerna
    */
   beforeEach(function () {
+    browser.get('http://localhost:8080');
     element(by.css('button[ng-click="clearSelected()"]')).click();
     expect(element(by.binding('getScore()')).getText()).toBe('0');
   });
@@ -11,7 +15,10 @@ describe('Lab 2', function () {
   it('Aktiviteterna ska vara poängsatta, testa genom att bocka för alla aktiviteter och kontrollera att totalpoängen blir 86.', function () {
     element.all(by.repeater('activity in activities'))
       .each(function (rowElement) {
-        rowElement.element(by.className('activity-btn')).click();
+        util.scrollToTop()
+          .then(function () {
+            rowElement.element(by.className('activity-btn')).click();
+          });
       });
     expect(element(by.binding('getScore()')).getText()).toBe('86');
   });
@@ -26,5 +33,15 @@ describe('Lab 2', function () {
     expect(element(by.id('logout-link')).isPresent()).toBe(true);
 
     element(by.id('logout-link')).click();
+  });
+
+  it('skall gå att visa en About-sida', function () {
+    element(by.css("#about-link")).click()
+      .then(function () {
+        return browser.driver.wait(protractor.until.elementLocated(By.id('about')), 10000);
+      })
+      .then(function () {
+        expect(browser.driver.findElement(By.id('product')).getText()).toEqual('Stavros');
+      });
   });
 });
